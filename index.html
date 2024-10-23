@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-
+<html class="scroll-smooth">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +6,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
-    <body>
+    <body >
     <div class="bg-custom-purple pb-24">
         <div class="fixed w-full nav flex p-3 justify-between items-center xl:py-6 lg:px-16 xl:px-20 xl:mb-30 z-[999] bg-[#0D063B]">
             <div class="logo">
@@ -18,12 +19,11 @@
             </div>
             <div class="btn">
                 <ul class="hidden xl:flex space-x-10 text-lg xl:text-xl font-normal text-white">
-                    <li class=""><a href="#"> WHY US </a></li>
-                    <li><a href="#"> CASE STUDIES </a></li>
-                    <li><a href="#"> OUR CLIENTS </a></li>
-                    <li><a href="#"> OUR PROCESS </a></li>
-                    <li><a href="#"> TESTIMONIALS </a></li>
-                    <li><a href="#"> OUR WEBSITE </a></li>
+                    <li class=""><a href="#why_us"> WHY US </a></li>
+                    <li><a href="#case_study"> CASE STUDIES </a></li>
+                    <li><a href="#our_clients"> OUR CLIENTS </a></li>
+                    <li><a href="#our_process"> OUR PROCESS </a></li>
+                    <li><a href="https://zonewebsites.us/" target="_blank"> OUR WEBSITE </a></li>
                 </ul>
                 <button class="popupbtn xl:hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-3 py-2 text-white rounded-sm">
                     BOOK A MEETING
@@ -83,7 +83,7 @@
                     <div class="chatbox bg-white absolute py-6 px-1 lg:px-3 m-4 rounded-xl shadow-md">
                         <div class="flex">
                             <div class="left chat lg:px-2">
-                                <h3 class="text-2xl font-bold">Care to chat?</h3>
+                                <h3 class="text-2xl font-bold">Click to chat?</h3>
                                 <p class="text-sm">Message us on WhatsApp</p>
                             </div>
                             <div class="right icon">
@@ -96,7 +96,7 @@
             
         </div>
     </div>
-    <div class="bg-slate-200 pt-16 pb-10 px-6 lg:pt-28 lg:pb-20">
+    <div id="why_us" class="bg-slate-200 pt-16 pb-10 px-6 lg:pt-28 lg:pb-20">
         <div class="container m-auto">
             <div class="lg:w-3/5">
                 <h3 class="text-2xl font-extrabold text-indigo-700 mb-6 lg:font-bold lg:text-4xl xl:text-5xl">
@@ -210,7 +210,8 @@
             </div>
         </div>
     </div>
-    <div class="bg-white overflow-hidden">
+    
+    <div id="case_study" class="bg-white overflow-hidden">
         <div class="container m-auto py-10">
             <h3 class="px-3 text-center text-2xl font-extrabold text-indigo-700 mb-6 lg:font-bold lg:text-4xl xl:text-5xl xl:text-left">
                 Some of our successful case studies
@@ -219,7 +220,7 @@
         <div class="container m-auto">
             <div class="services">
                 <div class="service md:flex md:items-center md:-mb-20">
-                    <div class="left imagebox group relative md:w-1/2 md:h-[800px] mb-10 before:bg-pink-500 before:right-[200px] before:w-[5000px] before:h-[100%] before:top-0 before:absolute">
+                    <div class="left transition duration-700 ease-in-out imagebox group relative md:w-1/2 md:h-[800px] mb-10 before:bg-pink-500 before:right-[200px] before:w-[5000px] before:h-[100%] before:top-0 before:absolute">
                         <img class="block z-50 relative group-hover:hidden md:absolute md:max-w-[50vw] md:w-[800px] md:bottom-2 md:right-3" src="https://www.madebyomnis.com/wp-content/uploads/2023/11/aio_03-2-1.png"/>
                         <img class="hidden z-50 relative group-hover:block md:absolute md:max-w-[50vw] md:w-[800px] md:bottom-2 md:right-3" src="https://www.madebyomnis.com/wp-content/uploads/2023/11/Property-1Frame-36834-1.png"/>
                     </div>
@@ -479,7 +480,7 @@
         </div>
     </div>
 
-    <div class="bg-white text-center py-16">
+    <div id="our_clients" class="bg-white text-center py-16">
         <div class="container m-auto">
             <div class="brands">
                 <h2 class="text-2xl font-extrabold text-indigo-700 mb-6 lg:font-bold lg:text-4xl xl:text-5xl">
@@ -539,7 +540,7 @@
         </div>
     </div>
 
-    <div class="bg-custom-purple">
+    <div id="our_process" class="bg-custom-purple">
         <div class="container m-auto p-6 pt-20 ">
             <div class="wedo_head mb-24">
                 <h2 class="text-white text-center xl:text-left text-3xl font-extrabold">
@@ -651,15 +652,15 @@
                 </h2>
                 <div class="lg:flex lg:justify-center lg:space-x-16">
                     <div class="text-center mb-10 ">
-                        <h3 class="text-green-400 font-bold text-7xl mb-3">87+</h3>
+                        <h3 class="text-green-400 font-bold text-7xl mb-3 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]" x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:350]'"><span class="supports-[counter-set]:sr-only">350</span>+</h3>
                         <h4 class="text-white text-3xl font-medium">Clients</h4>
                     </div>
                     <div class="text-center mb-10 ">
-                        <h3 class="text-green-400 font-bold text-7xl mb-3">500K</h3>
+                        <h3 class="text-green-400 font-bold text-7xl mb-3 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]" x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:1000]'"><span class="supports-[counter-set]:sr-only">1000</span>+</h3>
                         <h4 class="text-white text-3xl font-medium">Users</h4>
                     </div>
                     <div class="text-center mb-10 ">
-                        <h3 class="text-green-400 font-bold text-7xl mb-3">153+</h3>
+                        <h3 class="text-green-400 font-bold text-7xl mb-3 transition-[_--num] duration-[3s] ease-out [counter-set:_num_var(--num)] supports-[counter-set]:before:content-[counter(num)]" x-data="{ shown: false }" x-intersect="shown = true" :class="shown && '[--num:500]'"><span class="supports-[counter-set]:sr-only">500</span>+</h3>
                         <h4 class="text-white text-3xl font-medium">Projects</h4>
                     </div>
                 </div>
@@ -668,6 +669,7 @@
         
 
     </div>
+
     <div class="quote popupbtn cursor-pointer fixed z-[999999] bottom-0">
         <div class="-mb-6">
             <img class="w-40 m-auto" src="https://media4.giphy.com/media/eMCQsvsnZvfvzoiubI/giphy.gif?cid=6c09b9524p2o11j4c75uvxlk5eaq74p3npj1bha0nvyt7z5i&ep=v1_stickers_related&rid=giphy.gif&ct=s" />
@@ -675,7 +677,16 @@
 
         <div class="animate-wiggle animate-infinite cursor-pointer bg-pink-700 text-3xl  p-5 text-white rounded-r font-medium">GET A QUOTE ?</div>
     </div>
-   <div id="popupModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed z-[9999] w-full md:inset-0  max-h-full m-auto flex items-start bg-slate-900 bg-opacity-90">
+
+    <div id="gototop" class="hidden backtotop cursor-pointer fixed z-[999999] bottom-1 right-1">
+        <div class="animate-bounce animate-infinite cursor-pointer bg-pink-700 text-3xl  p-1 text-white font-medium rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-610">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m15 11.25-3-3m0 0-3 3m3-3v7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </div>
+    </div>
+
+    <div id="popupModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed z-[9999] w-full md:inset-0  max-h-full m-auto flex items-start bg-slate-900 bg-opacity-90">
         <div class="relative p-4 w-full max-w-md max-h-full m-auto" >
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow dark:bg-[#0D063B]">
@@ -719,11 +730,13 @@
             </div>
         </div>
     </div>     
+    
     <script>
         const popupBtn = document.querySelectorAll(".popupbtn");
         const quoteBtn = document.querySelector(".quote");
         const popupModal = document.querySelector("#popupModal");
         const popupclose = document.querySelector("#close");
+        const gotoTop = document.querySelector("#gototop");
         popupBtn.forEach((e,key)=>{
             e.addEventListener("click", ()=>{
             quoteBtn.classList.add("hidden");
@@ -734,6 +747,22 @@
             popupModal.classList.add("hidden");
             quoteBtn.classList.remove("hidden");
         });
+        if(gotoTop){
+            window.onscroll = function () {
+                if(document.body.scrollTop > 500 || document.documentElement.scrollTop>500 ){
+                    gotoTop.classList.remove("hidden");
+                } else {
+                    gotoTop.classList.add("hidden");
+                }
+            };
+
+            gotoTop.addEventListener("click", () =>{
+                window.scrollTo({
+                    top:0,
+                    behaviour:'smooth'
+                });
+            });
+        }
     </script>
     </body>
 </html>
